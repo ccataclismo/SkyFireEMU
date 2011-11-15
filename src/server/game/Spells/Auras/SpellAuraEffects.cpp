@@ -5911,7 +5911,6 @@ void AuraEffect::HandleModDamagePercentDone(AuraApplication const *aurApp, uint8
                 GetBase()->SetDuration(12000, true);
                 break;
         }
-    target->SetPower(POWER_HOLY_POWER, 0);
     }
 }
 
