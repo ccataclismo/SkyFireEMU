@@ -742,6 +742,16 @@ void Spell::SpellDamageSchoolDmg(SpellEffIndex effIndex)
                     m_caster->RemoveAurasDueToSpell(87160);
                     m_caster->RemoveAurasDueToSpell(81292);
                 }
+				// Mind Blast - Paralysis
+				else if (m_spellInfo->Id == 8092)
+				{
+					// Paralysis (Rank 1)
+					if (m_caster->HasAura(87192))
+						m_caster->CastSpell(unitTarget, 87193, true);
+					// Paralysis (Rank 2)
+					else if (m_caster->HasAura(87195))
+						m_caster->CastSpell(unitTarget, 87194, true);
+				}
                 // Improved Mind Blast (Mind Blast in shadow form bonus)
                 else if (m_caster->GetShapeshiftForm() == FORM_SHADOW && (m_spellInfo->SpellFamilyFlags[0] & 0x00002000))
                 {
